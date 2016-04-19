@@ -1,13 +1,7 @@
 from Token import Token
 from Sentence import Sentence
 from Corpus import Corpus
-from Result import Result
+from Evaluation import Evaluation
 
 
-evaluation = Result(Corpus("dev.col","dev-predicted.col").getSentStats())
-
-print evaluation.Evaluation()
-
-
-
-    
+print Evaluation(Corpus("dev.col","dev-predicted.col")).evaluate()

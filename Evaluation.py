@@ -1,28 +1,29 @@
 from __future__ import division
 from collections import Counter, defaultdict
-import math, re
+import math
+import re
 from itertools import izip
 from Token import Token
 from Sentence import Sentence
 from Corpus import Corpus
 
 
-class Result():
-	def __init__(self, CorpStats):
-		self.CorpStats = CorpStats
+class Evaluation():
+	def __init__(self, Corpus):
+		self.Corpus = Corpus
 
-	def Evaluation(self):
+	def evaluate(self):
 		CorpEvaluation = {}
 		totalFscore = 0
 		totalPrecision = 0
 		totalRecall = 0
 		totalTP = 0
-		for tag in self.CorpStats:
-			totalTP += self.CorpStats[tag]["TP"]
+		for tag in self.Corpus.getSentStats():
+			totalTP += self.Corpus.getSentStats()[tag]["TP"]
 			try:
-				precision = self.CorpStats[tag]["TP"] / (self.CorpStats[tag]["TP"] + self.CorpStats[tag]["FP"])
+				precision = self.Corpus.getSentStats()[tag]["TP"] / (self.Corpus.getSentStats()[tag]["TP"] + self.Corpus.getSentStats()[tag]["FP"])
 				totalPrecision += precision
-				recall = self.CorpStats[tag]["TP"] / (self.CorpStats[tag]["TP"] + self.CorpStats[tag]["FN"])
+				recall = self.Corpus.getSentStats()[tag]["TP"] / (self.Corpus.getSentStats()[tag]["TP"] + self.Corpus.getSentStats()[tag]["FN"])
 				totalRecall += recall
 				fScore = 2 * precision * recall / (precision + recall)
 				totalFscore += fScore
@@ -44,8 +45,6 @@ class Result():
 		print tokens_list
 		return CorpEvaluation
 
+	def prettyPrint
 
 
-
-	#def PrettyPrint(self):
-		#for tag in self.CorpStats
