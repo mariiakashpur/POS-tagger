@@ -12,6 +12,8 @@ class Corpus():
 		self.predictedPath = predictedPath
 		self.sents = []
 		self.sent_stats = {}
+		#ADDED
+		self.tokensList =[]
 		with open(goldPath) as gf, open(predictedPath) as pf:
 			sent = Sentence()
 			for gline,pline in izip(gf, pf): # open two files simultaneously
@@ -20,7 +22,8 @@ class Corpus():
 					ptoken_tag = re.split(r'\t', pline)
 					if gtoken_tag[0] == ptoken_tag[0]:
 						token = Token(gtoken_tag[0], gtoken_tag[1], ptoken_tag[1]) # create new Token object
-						sent.addToken(token) 
+						# ADDED
+						self.tokensList = sent.addToken(token) # to count number of tokens 
 					else:
 						raise Exception("Files not in sync")
 				else:
@@ -42,6 +45,8 @@ class Corpus():
 				else:
 					self.sent_stats [tag] = token_stats[tag]
 		return self.sent_stats
+
+	#def eval(self)
 
     	
 

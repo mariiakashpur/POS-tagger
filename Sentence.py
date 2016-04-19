@@ -6,7 +6,8 @@ class Sentence:
     self.token_stats = {}
 
   def addToken(self, token):
-    self.tokens.append(token)
+    # ADDED Return
+    return self.tokens.append(token)
 
   def getTokens(self):
   	return self.tokens
