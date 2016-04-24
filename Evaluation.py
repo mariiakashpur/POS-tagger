@@ -1,33 +1,36 @@
 from __future__ import division
-from collections import Counter, defaultdict
+from collections import Counter, defaultdict, OrderedDict
 import math
-import re
-from itertools import izip
 from Token import Token
 from Sentence import Sentence
 from Corpus import Corpus
 
 
 class Evaluation(object):
-	def __init__(self, Stats):
-		self.corpus = Corpus("dev.col","dev-predicted.col") # STUPID, BUT WORKS :)
-		self.Stats = Stats
+	def __init__(self, corpus):
+		self.corpus = corpus
+		self.stats = self.corpus.getSentStats()
+		self.accuracy = 0
+		self.macro = 0
+		self.micro = 0
+		self.eval = self.evaluate() # ensure that all needed variables are set
 
-	def precision(self, tag):
+
+	def countPrecision(self, tag):
 		try:
-			precision = self.Stats[tag]["TP"] / (self.Stats[tag]["TP"] + self.Stats[tag]["FP"])
+			precision = self.stats[tag]["TP"] / (self.stats[tag]["TP"] + self.stats[tag]["FP"])
 		except ZeroDivisionError:
 			precision = 0
 		return precision
 
-	def recall(self,tag):
+	def countRecall(self,tag):
 		try:
-			recall = self.Stats[tag]["TP"] / (self.Stats[tag]["TP"] + self.Stats[tag]["FN"])	
+			recall = self.stats[tag]["TP"] / (self.stats[tag]["TP"] + self.stats[tag]["FN"])	
 		except ZeroDivisionError:
 			recall = 0
 		return recall
 
-	def fscore(self, precision, recall):
+	def countFscore(self, precision, recall):
 		try:
 			fScore = 2 * precision * recall / (precision + recall)
 		except ZeroDivisionError:
@@ -35,35 +38,40 @@ class Evaluation(object):
 		return fScore
 
 	def evaluate(self):
-		CorpEvaluation = {}
-		totalFscore = 0
-		totalPrecision = 0
-		totalRecall = 0
+		corpEvaluation = {} 
 		totalTP = 0
-		for tag in self.Stats:
-			totalTP += self.Stats[tag]["TP"]
-			precision  = self.precision(tag)
-			totalPrecision += precision
-			recall = self.recall(tag)
-			totalRecall += recall
-			fScore = self.fscore(precision, recall)
-			totalFscore += fScore
-			CorpEvaluation[tag] = [precision]
-			CorpEvaluation[tag].append(recall)
-			CorpEvaluation[tag].append(fScore)
-		#print self.Stats
-		MicroEval = totalFscore / len(CorpEvaluation)
-		# MacroEval starts here
-		averagePrecision = totalPrecision / len(CorpEvaluation)
-		averageRecall = totalRecall / len(CorpEvaluation)
-		MacroEval =  2 * averagePrecision * averageRecall / (averagePrecision + averageRecall)
-		
-		accuracy = totalTP / self.corpus.getNumTokens()
-		print accuracy
-		print "MicroEval - ", MicroEval
-		print "MacroEval - ", MacroEval
-		return CorpEvaluation
+		totalFP = 0
+		totalFN = 0
+		totalFscore = 0
 
-	#def prettyPrint
+		for tag in self.stats:
+			totalTP += self.stats[tag]["TP"]
+			totalFP += self.stats[tag]["FP"]
+			totalFN += self.stats[tag]["FN"]
+
+			precision = self.countPrecision(tag)
+			recall = self.countRecall(tag)
+			fScore = self.countFscore(precision, recall)
+
+
+			corpEvaluation[tag] = [precision] # precision under index 0 
+			corpEvaluation[tag].append(recall) # recall under index 1
+			corpEvaluation[tag].append(fScore) # fscore under index 2
+			totalFscore += fScore
+
+		self.accuracy = totalTP / self.corpus.getNumTokens()
+		self.macro = totalFscore / len(corpEvaluation) 
+		self.micro = self.countFscore(totalTP / (totalTP + totalFP), totalTP / (totalTP + totalFN))
+
+		return corpEvaluation
+
+	def format(self):
+		output = "accuracy: %s\nmacroaverage: %s\nmicroaverage: %s\n" % (str(round(self.accuracy, 3)), str(round(self.macro, 3)), str(round(self.micro, 3))) 
+		for tag in self.eval:
+			output += "%s ==> precision: %s\trecall: %s\tf-score: %s\n" % (tag.strip().ljust(5), str(round(self.eval[tag][0], 3)).ljust(5), 
+				                                                          str(round(self.eval[tag][1], 3)).ljust(5), str(round(self.eval[tag][2], 3)).ljust(5))
+		return output
+
+
 
 
