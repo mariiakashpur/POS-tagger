@@ -1,6 +1,13 @@
+#!/usr/bin/env python
+
 from Token import Token
 from Sentence import Sentence
 from Corpus import Corpus
 from Evaluation import Evaluation
+import sys
 
-print Evaluation(Corpus("dev1.col","dev-predicted1.col")).format()
+if len(sys.argv) != 3:
+	print "Error: Please specify file names as arguments."
+	sys.exit()
+
+print Evaluation(Corpus(sys.argv[1],sys.argv[2])).format()

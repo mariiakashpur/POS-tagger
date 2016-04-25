@@ -10,7 +10,7 @@ from Token import Token
 from Sentence import Sentence
 
 
-class Corpus():
+class Corpus(object):
 	def __init__(self, goldPath, predictedPath):
 		self.goldPath = goldPath
 		self.predictedPath = predictedPath

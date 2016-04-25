@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-class Sentence: 
+class Sentence(object): 
   def __init__(self):
     self.tokens = []
     self.token_stats = {}
