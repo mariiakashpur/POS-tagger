@@ -22,8 +22,11 @@ class Token(object):
   def isLabeledCorrectly(self):
     return self.goldPOS == self.predictedPOS
 
-
-
+  def generateFeatures(self):
+    features = []
+    features.append("W=" + self.getText()) # feature word itself
+    features.append("SUFF3=" + self.getText()[-3:]) # feature suffix - last 3 chars
+    return features
 
 
 
