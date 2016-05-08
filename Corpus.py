@@ -17,6 +17,7 @@ class Corpus(object):
 		self.sents = [] # all sents in corpus
 		self.sent_stats = {}
 		self.numTokens = 0 # count total tokens in corpus
+		self.tags = set()
 		with open(goldPath) as gf, open(predictedPath) as pf:
 			sent = Sentence()
 			for gline,pline in izip(gf, pf): # open two files simultaneously
@@ -50,6 +51,12 @@ class Corpus(object):
 				else:
 					self.sent_stats [tag] = token_stats[tag]
 		return self.sent_stats
+
+	def getTags(self):
+		for sent in self.sents:
+			for token in sent:
+				self.tags.append(token.getGoldPOS)
+		return self.tags
 
 
     	
