@@ -18,6 +18,7 @@ class Corpus(object):
 		self.sent_stats = {}
 		self.numTokens = 0 # count total tokens in corpus
 		self.tags = set()
+		self.tokens = []
 		sent = Sentence()
 		if predictedPath:
 			with open(goldPath) as gf, open(predictedPath) as pf:
@@ -40,7 +41,8 @@ class Corpus(object):
 					if line.strip(): # check if lines not empty
 						token_tag = re.split(r'\t', line)
 						token = Token(token_tag[0], token_tag[1]) # create new Token object
-						sent.addToken(token) 
+						sent.addToken(token)
+						self.tokens.append(sent.getTokens())
 					else:
 						self.sents.append(sent)
 						sent = Sentence()
