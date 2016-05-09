@@ -21,29 +21,29 @@ class Corpus(object):
 		sent = Sentence()
 		if predictedPath:
 			with open(goldPath) as gf, open(predictedPath) as pf:
-			for gline,pline in izip(gf, pf): # open two files simultaneously
-				if gline.strip() and pline.strip(): # check if lines not empty
-					gtoken_tag = re.split(r'\t', gline)
-					ptoken_tag = re.split(r'\t', pline)
-					if gtoken_tag[0] == ptoken_tag[0]:
-						token = Token(gtoken_tag[0], gtoken_tag[1], ptoken_tag[1]) # create new Token object
-						sent.addToken(token)
-						self.numTokens += 1 
+				for gline,pline in izip(gf, pf): # open two files simultaneously
+					if gline.strip() and pline.strip(): # check if lines not empty
+						gtoken_tag = re.split(r'\t', gline)
+						ptoken_tag = re.split(r'\t', pline)
+						if gtoken_tag[0] == ptoken_tag[0]:
+							token = Token(gtoken_tag[0], gtoken_tag[1], ptoken_tag[1]) # create new Token object
+							sent.addToken(token)
+							self.numTokens += 1 
+						else:
+							raise Exception("Files not in sync")
 					else:
-						raise Exception("Files not in sync")
-				else:
-					self.sents.append(sent)
-					sent = Sentence()
+						self.sents.append(sent)
+						sent = Sentence()
 		else:
 			with open(goldPath) as gf:
-			for line in gf: # open two files simultaneously
-				if line.strip(): # check if lines not empty
-					token_tag = re.split(r'\t', line)
-					token = Token(token_tag[0], token_tag[1]) # create new Token object
+				for line in gf: 
+					if line.strip(): # check if lines not empty
+						token_tag = re.split(r'\t', line)
+						token = Token(token_tag[0], token_tag[1]) # create new Token object
 						sent.addToken(token) 
-				else:
-					self.sents.append(sent)
-					sent = Sentence()
+					else:
+						self.sents.append(sent)
+						sent = Sentence()
 
 
 	def getNumTokens(self):
@@ -65,9 +65,9 @@ class Corpus(object):
 		return self.sent_stats
 
 	def getTags(self):
-		for sent in self.sents:
-			for token in sent:
-				self.tags.append(token.getGoldPOS)
+		for sent in self.getSents():
+			for token in sent.getTokens():
+				self.tags.update(token.getGoldPOS())
 		return self.tags
 
 

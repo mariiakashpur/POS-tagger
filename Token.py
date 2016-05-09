@@ -4,7 +4,7 @@ import math
 
 class Token(object): 
 
-  def __init__(self, text, goldPOS, predictedPOS):
+  def __init__(self, text, goldPOS, predictedPOS=None):
     """Initializing data structures in the constructor."""
     self.text = text
     self.goldPOS = goldPOS
