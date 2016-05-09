@@ -11,15 +11,16 @@ from Sentence import Sentence
 
 
 class Corpus(object):
-	def __init__(self, goldPath, predictedPath):
+	def __init__(self, goldPath, predictedPath=None):
 		self.goldPath = goldPath
 		self.predictedPath = predictedPath
 		self.sents = [] # all sents in corpus
 		self.sent_stats = {}
 		self.numTokens = 0 # count total tokens in corpus
 		self.tags = set()
-		with open(goldPath) as gf, open(predictedPath) as pf:
-			sent = Sentence()
+		sent = Sentence()
+		if predictedPath:
+			with open(goldPath) as gf, open(predictedPath) as pf:
 			for gline,pline in izip(gf, pf): # open two files simultaneously
 				if gline.strip() and pline.strip(): # check if lines not empty
 					gtoken_tag = re.split(r'\t', gline)
@@ -33,6 +34,17 @@ class Corpus(object):
 				else:
 					self.sents.append(sent)
 					sent = Sentence()
+		else:
+			with open(goldPath) as gf:
+			for line in gf: # open two files simultaneously
+				if line.strip(): # check if lines not empty
+					token_tag = re.split(r'\t', line)
+					token = Token(token_tag[0], token_tag[1]) # create new Token object
+						sent.addToken(token) 
+				else:
+					self.sents.append(sent)
+					sent = Sentence()
+
 
 	def getNumTokens(self):
 		return self.numTokens
