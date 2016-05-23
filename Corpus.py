@@ -45,6 +45,7 @@ class Corpus(object):
 						token = Token(token_tag[0], token_tag[1]) # create new Token object
 						sent.addToken(token)
 						self.tokens.append(sent.getTokens())
+						self.numTokens += 1 
 						# sent.addToken(token)
 					else:
 						self.sents.append(sent)

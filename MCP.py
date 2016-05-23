@@ -34,6 +34,7 @@ class MulticlassPerceptron(object):
     for sent in self.corpus.getSents():
       for token in sent.getTokens():
         predictedTag = self.getBestTag(token)
+        token.setPredictedPOS(predictedTag)
         if predictedTag == token.getGoldPOS():
           continue
         else:

@@ -1,3 +1,5 @@
+from Evaluation import Evaluation
+
 class Training(object):
   def __init__(self, algorithm): # algorithm is instance of any algorithm class, e.g. MCP
     self.algorithm = algorithm
@@ -5,6 +7,10 @@ class Training(object):
   def train(self, numIterations=100):
     for i in range(numIterations):
       self.algorithm.train() # call train method from algorithm
+      trainEval = Evaluation(self.algorithm.corpus)
+      print trainEval.format()
+
+
 
 
   def predict(self, corpus):
