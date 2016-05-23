@@ -2,7 +2,7 @@ from __future__ import division
 
 import math
 import re
-from random import shuffle
+import random
 
 from collections import Counter, defaultdict
 from itertools import izip
@@ -56,7 +56,7 @@ class Corpus(object):
 		return self.sents
 
 	def randomTokens(self):
-		random_tokens = shuffle(self.tokens)
+		random_tokens = random.sample(self.tokens, len(self.tokens))
         
 		return random_tokens
 
