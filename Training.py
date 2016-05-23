@@ -13,13 +13,12 @@ class Training(object):
 
   def train(self):
     for i in range(100):
-      for sent in self.corpus.getSents():
-        for token in sent.getTokens():
-          predictedTag = self.MCP.getBestTag(token)
-          if predictedTag == token.getGoldPOS():
-            continue
-          else:
-            MCP.getPerceptronFromTag(predictedTag).reduceWeights(token)
+      for token in self.corpus.randomTokens():
+      	predictedTag = self.MCP.getBestTag(token)
+        if predictedTag == token.getGoldPOS():
+        	continue
+        else:
+        	MCP.getPerceptronFromTag(predictedTag).reduceWeights(token)
             MCP.getPerceptronFromTag(token.getGoldPOS).increaseWeights(token)
 
 
