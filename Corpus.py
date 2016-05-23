@@ -2,6 +2,7 @@ from __future__ import division
 
 import math
 import re
+from random import shuffle
 
 from collections import Counter, defaultdict
 from itertools import izip
@@ -41,8 +42,8 @@ class Corpus(object):
 					if line.strip(): # check if lines not empty
 						token_tag = re.split(r'\t', line)
 						token = Token(token_tag[0], token_tag[1]) # create new Token object
+						self.tokens.append(token)
 						sent.addToken(token)
-						self.tokens.append(sent.getTokens())
 					else:
 						self.sents.append(sent)
 						sent = Sentence()
@@ -53,6 +54,11 @@ class Corpus(object):
 
 	def getSents(self):
 		return self.sents
+
+	def randomTokens(self):
+		random_tokens = shuffle(self.tokens)
+        
+		return random_tokens
 
 	def getSentStats(self):
 		for sent in self.sents:
