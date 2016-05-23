@@ -29,7 +29,7 @@ class Corpus(object):
 						gtoken_tag = re.split(r'\t', gline)
 						ptoken_tag = re.split(r'\t', pline)
 						if gtoken_tag[0] == ptoken_tag[0]:
-							token = Token(gtoken_tag[0], gtoken_tag[1], ptoken_tag[1]) # create new Token object
+							token = Token(gtoken_tag[0], gtoken_tag[1].strip(), ptoken_tag[1].strip()) # create new Token object
 							sent.addToken(token)
 							self.numTokens += 1 
 						else:
@@ -42,7 +42,7 @@ class Corpus(object):
 				for line in gf: 
 					if line.strip(): # check if lines not empty
 						token_tag = re.split(r'\t', line)
-						token = Token(token_tag[0], token_tag[1]) # create new Token object
+						token = Token(token_tag[0], token_tag[1].strip()) # create new Token object
 						sent.addToken(token)
 						self.tokens.append(sent.getTokens())
 						self.numTokens += 1 
@@ -87,6 +87,9 @@ class Corpus(object):
 	# def randomTokens(self):
 	# 	random_tokens = shuffle(self.tokens)       
 	# 	return random_tokens
+
+	def resetSentStats(self):
+		self.sent_stats = {}
 
 
 

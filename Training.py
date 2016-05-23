@@ -7,8 +7,11 @@ class Training(object):
   def train(self, numIterations=100):
     for i in range(numIterations):
       self.algorithm.train() # call train method from algorithm
+
       trainEval = Evaluation(self.algorithm.corpus)
       print trainEval.format()
+      self.algorithm.corpus.resetSentStats()
+
 
 
 
