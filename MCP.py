@@ -14,6 +14,9 @@ class MulticlassPerceptron(object):
     for tag in load('help/tagsets/upenn_tagset.pickle').keys():
       self.perceptrons[tag] = Perceptron(tag)
 
+  def getPerceptronFromTag(self, tag):
+    return self.perceptrons[tag]
+
   def getBestTag(self, token):
     currentBestScore = 0.0
     currentBestTag = "NN"
@@ -22,4 +25,3 @@ class MulticlassPerceptron(object):
         currentBestScore = perceptron.getScore()
         currentBestTag = perceptron.getTag()
     return currentBestTag
-
