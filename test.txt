@@ -1,0 +1,42 @@
+def train(corpus) {
+	for i in 0..100 { // for each training iteration
+		for token in corpus.tokens {
+			predictedLabel = mcp.getBestLabel(token) // lets assume: token.goldLabel should be NN but predictedLabel is VB
+			if (predictedLabel == token.getGoldLabel) {
+				// nothing
+			} else {
+				mcp.getPerceptron(predictedLabel).subtractWeights(token)
+				mcp.getPerceptron(token.goldLabel).addWeights(token)
+ 			}
+		}
+        }
+}
+
+class MCP {
+	…
+	var listOfPerceptrons = one-perceptron-for-each-label
+	def getBestLabel(token) {
+		getsScoreForEachPerceptron-and-returns-label-with-highest-score
+	}
+}
+
+class Perceptron {
+	var weightDictionary … // W=walk -> 0.0, W=house -> -5.0
+	var label … // NN or ADJ or VB …
+	
+		}def addWeights(token) {
+		features = token.getFeatures() // list
+		for feature in features {
+			var oldWeight = if (weightDictionary.contains(feature)) weightDictionary.get(feature) else 0
+			weightDictionary += feature -> oldWeight+1 // new weights might be added to model
+
+
+	}
+
+class Token:
+	def getFeatures() {
+	   var newList = …
+	   newList.add(W=tokenstring)
+	   if (tokenstring.matches(“[A-Z].*”)  newList.add(“CAPTIZALIZED”)
+	   newList.add(“PREFIX2=“+tokenstring.substring(0,2))
+	}
