@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class Training(object):
   def __init__(self, algorithm): # algorithm is instance of any algorithm class, e.g. MCP
     self.algorithm = algorithm
@@ -23,30 +22,3 @@ class Training(object):
         for token in sent:
           f.write(str(token.keys()[0]) + "\t" + str(token.values()[0]) + "\n")
         f.write("\n")
-=======
-from Token import Token
-from Sentence import Sentence
-from Corpus import Corpus
-from Perceptron import Perceptron
-from MCP import MulticlassPerceptron
-
-
-class Training(object):
-  def __init__(self, corpus, MCP):
-      self.corpus = corpus
-      self.MCP = MCP
-      # self.eval = self.evaluate() # ensure that all needed variables are set
-
-  def train(self):
-    for i in range(100):
-      for token in self.corpus.randomTokens():
-      	predictedTag = self.MCP.getBestTag(token)
-        if predictedTag == token.getGoldPOS():
-        	continue
-        else:
-        	MCP.getPerceptronFromTag(predictedTag).reduceWeights(token)
-            MCP.getPerceptronFromTag(token.getGoldPOS).increaseWeights(token)
-
-
-    
->>>>>>> 1ed2340993c46ee93a48cdaed17f74e2c2a93331

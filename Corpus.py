@@ -43,13 +43,9 @@ class Corpus(object):
 					if line.strip(): # check if lines not empty
 						token_tag = re.split(r'\t', line)
 						token = Token(token_tag[0], token_tag[1]) # create new Token object
-<<<<<<< HEAD
 						sent.addToken(token)
 						self.tokens.append(sent.getTokens())
-=======
-						self.tokens.append(token)
-						sent.addToken(token)
->>>>>>> 1ed2340993c46ee93a48cdaed17f74e2c2a93331
+						# sent.addToken(token)
 					else:
 						self.sents.append(sent)
 						sent = Sentence()
@@ -79,7 +75,6 @@ class Corpus(object):
 		return self.sent_stats
 
 	def getTags(self):
-<<<<<<< HEAD
 		tags = []
 		for sent in self.getSents():
 			for token in sent.getTokens():
@@ -91,14 +86,9 @@ class Corpus(object):
 	# def randomTokens(self):
 	# 	random_tokens = shuffle(self.tokens)       
 	# 	return random_tokens
-=======
-		for sent in self.getSents():
-			for token in sent.getTokens():
-				self.tags.update(token.getGoldPOS())
-		return self.tags
 
 
->>>>>>> 1ed2340993c46ee93a48cdaed17f74e2c2a93331
+
     	
 
 

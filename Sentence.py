@@ -1,11 +1,7 @@
 from collections import defaultdict
 
-<<<<<<< HEAD
+
 class Sentence(object):
- 
-=======
-class Sentence(object): 
->>>>>>> 1ed2340993c46ee93a48cdaed17f74e2c2a93331
   def __init__(self):
     self.tokens = []
     self.token_stats = {}

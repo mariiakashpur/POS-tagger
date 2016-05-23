@@ -1,10 +1,8 @@
 from __future__ import division
 from collections import Counter, defaultdict
 import math
-<<<<<<< HEAD
-=======
 from Token import Token
->>>>>>> 1ed2340993c46ee93a48cdaed17f74e2c2a93331
+
 
 class Perceptron(object): 
 
@@ -28,21 +26,10 @@ class Perceptron(object):
   def increaseWeights(self, token):
     tokenFeatures = token.generateFeatures()
     for feature in tokenFeatures:
-<<<<<<< HEAD
       self.featuresWeights[feature] += 1
-=======
-      self.featuresWeights = self.featuresWeights[feature] + 1
->>>>>>> 1ed2340993c46ee93a48cdaed17f74e2c2a93331
 
   def reduceWeights(self, token):
     tokenFeatures = token.generateFeatures()
     for feature in tokenFeatures:
-<<<<<<< HEAD
       self.featuresWeights[feature] -= 1
-=======
-      self.featuresWeights = self.featuresWeights[feature] - 1
 
-
-
-    
->>>>>>> 1ed2340993c46ee93a48cdaed17f74e2c2a93331
