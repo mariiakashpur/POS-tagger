@@ -41,13 +41,6 @@ class MulticlassPerceptron(object):
           self.getPerceptronFromTag(predictedTag).reduceWeights(token)
           self.getPerceptronFromTag(token.getGoldPOS().strip()).increaseWeights(token)
 
-  # def train(self):
-  #   for token in self.corpus.randomTokens():
-  #     predictedTag = self.getBestTag(token)
-  #     if predictedTag == token.getGoldPOS():
-  #       continue
-  #     else:
-  #       self.getPerceptronFromTag(predictedTag).reduceWeights(token)
-  #       self.getPerceptronFromTag(token.getGoldPOS().strip()).increaseWeights(token)
+  
 
 

@@ -29,3 +29,7 @@ class Sentence(object):
         self.token_stats[gt]["FN"] += 1 # increment FN counter for gold tag
         self.token_stats[pt]["FP"] += 1 # increment FP counter for predicted tag
     return self.token_stats
+
+
+  def resetTokenStats(self):
+    self.token_stats = {}
