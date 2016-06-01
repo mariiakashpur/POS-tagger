@@ -11,13 +11,12 @@ class Perceptron(object):
     self.tag = tag
 
   def getScore(self, token):
-    tokenFeatures = token.generateFeatures()
+    tokenFeatures = token.getFeatures()
     score = 0.0
     if self.featuresWeights: # check if not empty dict
-      for feature in self.featuresWeights:
-        for tokenFeature in tokenFeatures:
-          if feature == tokenFeature:
-            score += self.featuresWeights[feature]
+      for tokenFeature in tokenFeatures: 
+        if tokenFeature in self.featuresWeights:
+          score += self.featuresWeights[tokenFeature]
     return score
 
   def getTag(self):

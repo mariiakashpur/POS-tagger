@@ -1,31 +1,29 @@
 from Evaluation import Evaluation
 from Corpus import Corpus
-import random
 
 class Training(object):
   def __init__(self, algorithm): # algorithm is instance of any algorithm class, e.g. MCP
     self.algorithm = algorithm
 
   def train(self, numIterations=100, testCorpusPath=None):
-    for i in range(numIterations):
+    for i in range(1, numIterations + 1):
       self.algorithm.train() # call train method from algorithm
-
-      if i == 0 or i == 99:
+      if i % 10 == 0:
         trainEval = Evaluation(self.algorithm.corpus)
-        print "Training evaluation for", i+1, "iteration(s):\n", trainEval.format()
+        print "Training evaluation for", i, "iteration(s):\n", trainEval.format()
         self.algorithm.corpus.resetSentStats()
-        if testCorpusPath:
-          testCorpus = Corpus(testCorpusPath)
-          self.setPredictedTags(testCorpus)
+      if testCorpusPath:
+        testCorpus = Corpus(testCorpusPath)
+        self.setPredictedTags(testCorpus)
+        if i % 10 == 0:
           testEval = Evaluation(testCorpus)
-          print "Testing evaluation for", i+1, "iteration(s):\n",testEval.format()
+          print "Testing evaluation for", i, "iteration(s):\n",testEval.format()
           testCorpus.resetSentStats()
 
 
   def setPredictedTags(self, testCorpus):
     for sent in testCorpus.getSents():
-      for token in random.sample(sent.getTokens(), len(sent.getTokens())):
-      #for token in sent.getTokens():
+      for token in sent.getTokens():
         predictedTag = self.algorithm.getBestTag(token)
         token.setPredictedPOS(predictedTag)
       

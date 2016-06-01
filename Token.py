@@ -9,6 +9,7 @@ class Token(object):
     self.text = text
     self.goldPOS = goldPOS
     self.predictedPOS = predictedPOS
+    self.features = self.generateFeatures()
 
   def getText(self):
     return self.text
@@ -31,7 +32,8 @@ class Token(object):
   def setPredictedPOS(self, tag):
     self.predictedPOS = tag
 
-
+  def getFeatures(self):
+    return self.features
 
 
 

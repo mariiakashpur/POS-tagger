@@ -6,6 +6,7 @@ from random import shuffle
 
 from collections import Counter, defaultdict
 from itertools import izip
+from random import shuffle
 
 from Token import Token
 from Sentence import Sentence
@@ -57,6 +58,11 @@ class Corpus(object):
 	def getSents(self):
 		return self.sents
 
+	def randomTokens(self):
+		random_tokens = shuffle(self.tokens)
+        
+		return random_tokens
+
 	def getSentStats(self):
 		for sent in self.sents:
 			token_stats = sent.getTokenStats()
@@ -78,13 +84,14 @@ class Corpus(object):
 		#@todo check it, set.update
 		return self.tags
 
+	# def randomTokens(self):
+	# 	random_tokens = shuffle(self.tokens)       
+	# 	return random_tokens
+
 	def resetSentStats(self):
 		for sent in self.sents:
 			sent.resetTokenStats()
 		self.sent_stats = {}
-
-
-
 
 
 
