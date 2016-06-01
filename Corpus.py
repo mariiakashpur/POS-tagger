@@ -87,6 +87,15 @@ class Corpus(object):
 
 
 
+	def resetSentStats(self):
+		for sent in self.sents:
+			sent.resetTokenStats()
+		self.sent_stats = {}
+
+
+
+
+
 
 
     	

@@ -8,4 +8,5 @@ if len(sys.argv) != 3:
 	sys.exit()
 
 training = Training(MulticlassPerceptron(Corpus(sys.argv[1])))# train file
-training.train(1, sys.argv[2])# test file
+training.train(3, sys.argv[2])# test file
+
