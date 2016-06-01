@@ -59,6 +59,7 @@ class Evaluation(object):
 			corpEvaluation[tag].append(fScore) # fscore under index 2
 			totalFscore += fScore
 
+
 		self.accuracy = totalTP / self.corpus.getNumTokens()
 		self.macro = totalFscore / len(corpEvaluation) 
 		self.micro = self.countFscore(totalTP / (totalTP + totalFP), totalTP / (totalTP + totalFN))

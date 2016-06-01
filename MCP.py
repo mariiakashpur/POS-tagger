@@ -1,6 +1,6 @@
 from __future__ import division
 from collections import Counter, defaultdict
-from random import shuffle
+import random
 import math
 from Perceptron import Perceptron
 
@@ -32,21 +32,16 @@ class MulticlassPerceptron(object):
 
   def train(self):
     for sent in self.corpus.getSents():
-      for token in sent.getTokens():
+      for token in random.sample(sent.getTokens(), len(sent.getTokens())):
+      #for token in sent.getTokens():
         predictedTag = self.getBestTag(token)
+        token.setPredictedPOS(predictedTag)
         if predictedTag == token.getGoldPOS():
           continue
         else:
           self.getPerceptronFromTag(predictedTag).reduceWeights(token)
           self.getPerceptronFromTag(token.getGoldPOS().strip()).increaseWeights(token)
 
-  # def train(self):
-  #   for token in self.corpus.randomTokens():
-  #     predictedTag = self.getBestTag(token)
-  #     if predictedTag == token.getGoldPOS():
-  #       continue
-  #     else:
-  #       self.getPerceptronFromTag(predictedTag).reduceWeights(token)
-  #       self.getPerceptronFromTag(token.getGoldPOS().strip()).increaseWeights(token)
+  
 
 
