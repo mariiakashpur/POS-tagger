@@ -15,10 +15,9 @@ class Training(object):
       if testCorpusPath:
         testCorpus = Corpus(testCorpusPath)
         self.setPredictedTags(testCorpus)
-        if i % 10 == 0:
-          testEval = Evaluation(testCorpus)
-          print "Testing evaluation for", i, "iteration(s):\n",testEval.format()
-          testCorpus.resetSentStats()
+        testEval = Evaluation(testCorpus)
+        print "Testing evaluation for", i, "iteration(s):\n",testEval.format()
+        testCorpus.resetSentStats()
 
 
   def setPredictedTags(self, testCorpus):
