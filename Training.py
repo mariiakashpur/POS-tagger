@@ -15,12 +15,18 @@ class Training(object):
       if testCorpusPath:
         testCorpus = Corpus(testCorpusPath)
         self.setPredictedTags(testCorpus)
+<<<<<<< HEAD
         #if i % 10 == 0:
         testEval = Evaluation(testCorpus)
         # print "Testing evaluation for", i, "iteration(s):\n",testEval.format()
         # testCorpus.resetSentStats()
         if i == numIterations:
           testEval.mistagedTokens()
+=======
+        testEval = Evaluation(testCorpus)
+        print "Testing evaluation for", i, "iteration(s):\n",testEval.format()
+        testCorpus.resetSentStats()
+>>>>>>> ab6e16c47491586650e2679deda925792c63f350
 
 
   def setPredictedTags(self, testCorpus):
