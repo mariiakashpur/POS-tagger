@@ -3,4 +3,4 @@ from MCP import MulticlassPerceptron
 from Training import Training
 
 training = Training(MulticlassPerceptron(Corpus("train.col")))
-training.train(20, "dev.col")
+training.train(100, "test.col")

@@ -5,12 +5,21 @@ class Sentence(object):
   def __init__(self):
     self.tokens = []
     self.token_stats = {}
+    self.sentText = []
 
   def addToken(self, token):
     self.tokens.append(token)
 
   def getTokens(self):
   	return self.tokens
+
+  def getSentText(self):
+    sentTokens = []
+    for token in self.getTokens():
+      sentTokens.append(token.getText())
+    self.sentText = ' '.join(sentTokens)
+
+    return self.sentText
 
   def getTokenStats(self):
     for token in self.getTokens(): # first iteration to collect all tags in both gold and predicted sent tagging

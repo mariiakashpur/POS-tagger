@@ -8,17 +8,19 @@ class Training(object):
   def train(self, numIterations=100, testCorpusPath=None):
     for i in range(1, numIterations + 1):
       self.algorithm.train() # call train method from algorithm
-      if i % 10 == 0:
-        trainEval = Evaluation(self.algorithm.corpus)
-        print "Training evaluation for", i, "iteration(s):\n", trainEval.format()
-        self.algorithm.corpus.resetSentStats()
+      #if i % 20 == 0:
+       # trainEval = Evaluation(self.algorithm.corpus)
+        #print "Training evaluation for", i, "iteration(s):\n", trainEval.format()
+        #self.algorithm.corpus.resetSentStats()
       if testCorpusPath:
         testCorpus = Corpus(testCorpusPath)
         self.setPredictedTags(testCorpus)
-        if i % 10 == 0:
-          testEval = Evaluation(testCorpus)
-          print "Testing evaluation for", i, "iteration(s):\n",testEval.format()
-          testCorpus.resetSentStats()
+        #if i % 10 == 0:
+        testEval = Evaluation(testCorpus)
+        # print "Testing evaluation for", i, "iteration(s):\n",testEval.format()
+        # testCorpus.resetSentStats()
+        if i == numIterations:
+          testEval.mistagedTokens()
 
 
   def setPredictedTags(self, testCorpus):
@@ -26,6 +28,8 @@ class Training(object):
       for token in sent.getTokens():
         predictedTag = self.algorithm.getBestTag(token)
         token.setPredictedPOS(predictedTag)
+
+
       
 
   # def predict(self, corpus):
