@@ -6,6 +6,7 @@ from random import shuffle
 
 from collections import Counter, defaultdict
 from itertools import izip
+from pprint import pprint
 from random import shuffle
 
 from Token import Token
@@ -22,6 +23,9 @@ class Corpus(object):
 		self.tags = set()
 		self.tokens = []
 		sent = Sentence()
+
+
+
 		if predictedPath:
 			with open(goldPath) as gf, open(predictedPath) as pf:
 				for gline,pline in izip(gf, pf): # open two files simultaneously
@@ -37,19 +41,33 @@ class Corpus(object):
 					else:
 						self.sents.append(sent)
 						sent = Sentence()
+
 		else:
+			sentences = []
+			sentence = []
 			with open(goldPath) as gf:
 				for line in gf: 
 					if line.strip(): # check if lines not empty
-						token_tag = re.split(r'\t', line)
-						token = Token(token_tag[0], token_tag[1].strip()) # create new Token object
-						sent.addToken(token)
-						self.tokens.append(sent.getTokens())
+						sentence.append(re.split(r'\t', line))
 						self.numTokens += 1 
-						# sent.addToken(token)
 					else:
-						self.sents.append(sent)
-						sent = Sentence()
+						sentences.append(sentence)
+						sentence = []
+
+			prev = "prevnotekzist"
+			following = "folnotekzist"
+			for j, sentence in enumerate(sentences):
+				for i, token_tag in enumerate(sentence):
+					if i+1 < len(sentence):
+						following = sentence[i+1][0]
+					elif j+1 < len(sentences):
+						following = sentences[j+1][0][0]
+					token = Token(token_tag[0], token_tag[1].strip(), prev, following)
+					# pprint (vars(token))
+					prev = token_tag[0]
+					sent.addToken(token)
+				self.sents.append(sent)
+		 		sent = Sentence()
 
 
 	def getNumTokens(self):
@@ -59,8 +77,7 @@ class Corpus(object):
 		return self.sents
 
 	def randomTokens(self):
-		random_tokens = shuffle(self.tokens)
-        
+		random_tokens = shuffle(self.tokens)  
 		return random_tokens
 
 	def getSentStats(self):
@@ -84,9 +101,6 @@ class Corpus(object):
 		#@todo check it, set.update
 		return self.tags
 
-	# def randomTokens(self):
-	# 	random_tokens = shuffle(self.tokens)       
-	# 	return random_tokens
 
 	def resetSentStats(self):
 		for sent in self.sents:

@@ -23,12 +23,12 @@ class Perceptron(object):
     return self.tag
 
   def increaseWeights(self, token):
-    tokenFeatures = token.generateFeatures()
+    tokenFeatures = token.getFeatures()
     for feature in tokenFeatures:
       self.featuresWeights[feature] += 1
 
   def reduceWeights(self, token):
-    tokenFeatures = token.generateFeatures()
+    tokenFeatures = token.getFeatures()
     for feature in tokenFeatures:
       self.featuresWeights[feature] -= 1
 

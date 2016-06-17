@@ -5,11 +5,13 @@ import re
 
 class Token(object): 
 
-  def __init__(self, text, goldPOS, predictedPOS=None):
+  def __init__(self, text, goldPOS, prev, following, predictedPOS=None):
     """Initializing data structures in the constructor."""
     self.text = text
     self.goldPOS = goldPOS
     self.predictedPOS = predictedPOS
+    self.prev = prev
+    self.following = following
     self.features = self.generateFeatures()
 
   def getText(self):
@@ -21,6 +23,12 @@ class Token(object):
   def getPredictedPOS(self):
     return self.predictedPOS
 
+  def getPrev(self):
+    return self.prev
+
+  def getFollowing(self):
+    return self.following
+
   def isLabeledCorrectly(self):
     return self.goldPOS == self.predictedPOS
 
@@ -31,7 +39,7 @@ class Token(object):
     features.append("SUFF2=" + self.getText()[-2:]) # feature suffix - last 2 chars
     features.append("PREF3=" + self.getText()[0:3]) # feature prefix - first 3 chars
     features.append("PREF2=" + self.getText()[0:2]) # feature prefix - first 2 chars
-    if re.search(r"^[A-Z]+", self.getText()): # the word written in caps
+    if re.search(r"^[A-Z]+$", self.getText()): # the word written in caps
       features.append("ALLCAP=yes") 
     else:
       features.append("ALLCAP=no")
@@ -43,6 +51,9 @@ class Token(object):
       features.append("DIGIT=yes") 
     else:
       features.append("DIGIT=no")
+    features.append("W-1=" + self.getPrev())
+    features.append("W+1=" + self.getFollowing())
+
     return features
 
   def setPredictedPOS(self, tag):
