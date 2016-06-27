@@ -41,34 +41,73 @@ class Corpus(object):
 					else:
 						self.sents.append(sent)
 						sent = Sentence()
-
 		else:
+			# store all sentences from corpus
 			sentences = []
+			# store a sentence that consists of tokens
 			sentence = []
 			with open(goldPath) as gf:
 				for line in gf: 
-					if line.strip(): # check if lines not empty
-						sentence.append(re.split(r'\t', line))
+					# check if lines not empty
+					if line.strip(): 
+						# split line into token and tag as list elements
+						token_tag = re.split(r'\t', line)
+						# add a token object into sentence
+						sentence.append(Token(token_tag[0].strip(), token_tag[1].strip()))
+						# count total number of tokens
 						self.numTokens += 1 
 					else:
+						# we have reached end of sentence (empty line)
 						sentences.append(sentence)
 						sentence = []
 
 			prev = "prevnotekzist"
 			following = "folnotekzist"
 			for j, sentence in enumerate(sentences):
-				for i, token_tag in enumerate(sentence):
+				for i, token in enumerate(sentence):
+					# make sure we don't go beyond sentence length
 					if i+1 < len(sentence):
-						following = sentence[i+1][0]
+						following = sentence[i+1]
+					# if we reached end of current sentence - take following word as first word of next sentence
 					elif j+1 < len(sentences):
-						following = sentences[j+1][0][0]
-					token = Token(token_tag[0], token_tag[1].strip(), prev, following)
-					# pprint (vars(token))
-					prev = token_tag[0]
+						following = sentences[j+1][0]
+					token.setPrev(prev)
+					token.setFollowing(following)
+					token.getNeighborFeatures()
+					# print (vars(token))
+					prev = token
 					sent.addToken(token)
 				self.sents.append(sent)
 		 		sent = Sentence()
 
+
+
+		# else:
+		# 	sentences = []
+		# 	sentence = []
+		# 	with open(goldPath) as gf:
+		# 		for line in gf: 
+		# 			if line.strip(): # check if lines not empty
+		# 				sentence.append(re.split(r'\t', line))
+		# 				self.numTokens += 1 
+		# 			else:
+		# 				sentences.append(sentence)
+		# 				sentence = []
+
+		# 	prev = "prevnotekzist"
+		# 	following = "folnotekzist"
+		# 	for j, sentence in enumerate(sentences):
+		# 		for i, token_tag in enumerate(sentence):
+		# 			if i+1 < len(sentence):
+		# 				following = sentence[i+1][0]
+		# 			elif j+1 < len(sentences):
+		# 				following = sentences[j+1][0][0]
+		# 			token = Token(token_tag[0], token_tag[1].strip(), prev, following)
+		# 			# pprint (vars(token))
+		# 			prev = token_tag[0]
+		# 			sent.addToken(token)
+		# 		self.sents.append(sent)
+		#  		sent = Sentence()
 
 	def getNumTokens(self):
 		return self.numTokens
@@ -80,19 +119,21 @@ class Corpus(object):
 		random_tokens = shuffle(self.tokens)  
 		return random_tokens
 
-	def getSentStats(self):
+	def getSentStats(self): # !!! can't we do all calculation in init and here just return the result, just to avoid looping ?
 		for sent in self.sents:
 			token_stats = sent.getTokenStats()
 			for tag in token_stats:
+				print token_stats[tag]
 				if tag in self.sent_stats:
 					self.sent_stats [tag]["TP"] += token_stats[tag]["TP"]
 					self.sent_stats [tag]["FN"] += token_stats[tag]["FN"]
 					self.sent_stats [tag]["FP"] += token_stats[tag]["FP"]
 				else:
 					self.sent_stats [tag] = token_stats[tag]
+		print self.sent_stats
 		return self.sent_stats
 
-	def getTags(self):
+	def getTags(self): # !!! can't we do all calculation in init and here just return the result, just to avoid looping ?
 		tags = []
 		for sent in self.getSents():
 			for token in sent.getTokens():

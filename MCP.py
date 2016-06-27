@@ -10,10 +10,12 @@ class MulticlassPerceptron(object):
 
   def __init__(self, corpus):
     self.perceptrons = {}
+    # !!! make separate method for batch learning 
     self.intermPerceptrons = {} #BATCH LEARNING
     for tag in corpus.getTags():
-      self.perceptrons[tag.strip()] = Perceptron(tag.strip())
-      self.intermPerceptrons[tag.strip()] = Perceptron(tag.strip())
+      cleanTag = tag.strip()
+      self.perceptrons[cleanTag] = Perceptron(cleanTag)
+      self.intermPerceptrons[cleanTag] = Perceptron(cleanTag) # !!! why not set self.intermPerceptrons = self.perceptrons after for loop?
     self.corpus = corpus
 
   @staticmethod
@@ -30,16 +32,18 @@ class MulticlassPerceptron(object):
     currentBestScore = 0.0
     currentBestTag = self.getDefaultTag()
     for perceptron in self.perceptrons:
-      if self.perceptrons[perceptron].getScore(token) > currentBestScore:
-        currentBestScore = self.perceptrons[perceptron].getScore(token)
-        currentBestTag = self.perceptrons[perceptron].getTag()
+      currentPerceptron = self.perceptrons[perceptron]
+      currentScore = currentPerceptron.getScore(token)
+      if currentScore > currentBestScore:
+        currentBestScore = currentScore
+        currentBestTag = currentPerceptron.getTag()
     return currentBestTag
 
   def train(self):
     for sent in self.corpus.getSents():
       for token in random.sample(sent.getTokens(), len(sent.getTokens())):
         predictedTag = self.getBestTag(token)
-        token.setPredictedPOS(predictedTag)
+        token.setPredictedPOS(predictedTag) # !!! we do the same action in Training::setPredictedTags() ?
         if predictedTag == token.getGoldPOS():
           continue
         else:

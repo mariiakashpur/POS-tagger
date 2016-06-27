@@ -6,6 +6,8 @@ class Training(object):
     self.algorithm = algorithm
 
   def train(self, numIterations=100, testCorpusPath=None):
+    if testCorpusPath:
+      testCorpus = Corpus(testCorpusPath)
     for i in range(1, numIterations + 1):
       self.algorithm.train() # call train method from algorithm
       if i % 10 == 0:
@@ -13,18 +15,17 @@ class Training(object):
         # print "Training evaluation for", i, "iteration(s):\n", trainEval.format()
         # self.algorithm.corpus.resetSentStats()
         if testCorpusPath:
-          testCorpus = Corpus(testCorpusPath)
-          self.setPredictedTags(testCorpus)
+          self.setPredictedTags(testCorpus) 
           testEval = Evaluation(testCorpus)
           print "Testing evaluation for", i, "iteration(s):\n",testEval.format()
-          testCorpus.resetSentStats()
+          testCorpus.resetSentStats() # !!! we can use prototype pattern(so we don't need to loop through sents): here testCorpus = testCorpus.getPrototype() and in Corpus::__init__ : self.prototype = self (google : python prototype)?
           # if i == numIterations:
           #   testEval.mistagedTokens()
 
   def setPredictedTags(self, testCorpus):
     for sent in testCorpus.getSents():
       for token in sent.getTokens():
-        predictedTag = self.algorithm.getBestTag(token)
+        predictedTag = self.algorithm.getBestTag(token) # !!! we get best tags for tag and then update predicted tags for this token, why not to make in one line?
         token.setPredictedPOS(predictedTag)
 
 

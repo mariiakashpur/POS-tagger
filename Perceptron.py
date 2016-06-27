@@ -12,12 +12,14 @@ class Perceptron(object):
 
   def getScore(self, token):
     tokenFeatures = token.getFeatures()
+    # print tokenFeatures
     score = 0.0
     if self.featuresWeights: # check if not empty dict
       for tokenFeature in tokenFeatures: 
         if tokenFeature in self.featuresWeights:
           score += self.featuresWeights[tokenFeature]
     return score
+
 
   def getTag(self):
     return self.tag
