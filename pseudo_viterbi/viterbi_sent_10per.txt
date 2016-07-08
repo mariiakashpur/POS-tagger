@@ -1,0 +1,511 @@
+Training evaluation for 10 iteration(s):
+accuracy: 0.842
+macroaverage: 0.616
+microaverage: 0.842
+PRP$  ==> precision: 0.754	recall: 0.762	f-score: 0.758
+VBG   ==> precision: 0.81 	recall: 0.839	f-score: 0.825
+FW    ==> precision: 0.011	recall: 0.032	f-score: 0.017
+``    ==> precision: 0.542	recall: 0.545	f-score: 0.544
+VBN   ==> precision: 0.814	recall: 0.846	f-score: 0.83 
+,     ==> precision: 0.937	recall: 0.953	f-score: 0.945
+''    ==> precision: 0.703	recall: 0.634	f-score: 0.667
+VBP   ==> precision: 0.762	recall: 0.749	f-score: 0.755
+WDT   ==> precision: 0.721	recall: 0.815	f-score: 0.765
+JJ    ==> precision: 0.8  	recall: 0.793	f-score: 0.796
+WP    ==> precision: 0.477	recall: 0.641	f-score: 0.547
+VBZ   ==> precision: 0.832	recall: 0.794	f-score: 0.813
+DT    ==> precision: 0.888	recall: 0.862	f-score: 0.875
+RP    ==> precision: 0.528	recall: 0.52 	f-score: 0.524
+$     ==> precision: 0.625	recall: 0.724	f-score: 0.671
+NN    ==> precision: 0.888	recall: 0.882	f-score: 0.885
+VBD   ==> precision: 0.845	recall: 0.837	f-score: 0.841
+POS   ==> precision: 0.921	recall: 0.894	f-score: 0.908
+.     ==> precision: 0.945	recall: 0.942	f-score: 0.943
+TO    ==> precision: 0.804	recall: 0.872	f-score: 0.837
+HYPH  ==> precision: 0.856	recall: 0.89 	f-score: 0.873
+RB    ==> precision: 0.75 	recall: 0.745	f-score: 0.748
+-LRB- ==> precision: 0.354	recall: 0.519	f-score: 0.421
+:     ==> precision: 0.604	recall: 0.696	f-score: 0.646
+NNS   ==> precision: 0.888	recall: 0.884	f-score: 0.886
+PRP   ==> precision: 0.776	recall: 0.73 	f-score: 0.752
+VB    ==> precision: 0.702	recall: 0.639	f-score: 0.669
+WRB   ==> precision: 0.3  	recall: 0.405	f-score: 0.345
+CC    ==> precision: 0.876	recall: 0.854	f-score: 0.865
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.068	recall: 0.132	f-score: 0.089
+RBS   ==> precision: 0.253	recall: 0.452	f-score: 0.325
+RBR   ==> precision: 0.23 	recall: 0.382	f-score: 0.287
+CD    ==> precision: 0.85 	recall: 0.814	f-score: 0.832
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.169	recall: 0.255	f-score: 0.203
+IN    ==> precision: 0.912	recall: 0.903	f-score: 0.908
+WP$   ==> precision: 0.278	recall: 0.714	f-score: 0.4  
+MD    ==> precision: 0.75 	recall: 0.769	f-score: 0.759
+NNPS  ==> precision: 0.439	recall: 0.582	f-score: 0.501
+-RRB- ==> precision: 0.378	recall: 0.519	f-score: 0.437
+JJS   ==> precision: 0.303	recall: 0.388	f-score: 0.341
+JJR   ==> precision: 0.519	recall: 0.556	f-score: 0.536
+SYM   ==> precision: 0.458	recall: 0.611	f-score: 0.524
+UH    ==> precision: 0.333	recall: 0.4  	f-score: 0.364
+NNP   ==> precision: 0.91 	recall: 0.892	f-score: 0.901
+
+Testing evaluation for 10 iteration(s):
+accuracy: 0.784
+macroaverage: 0.529
+microaverage: 0.784
+PRP$  ==> precision: 0.782	recall: 0.613	f-score: 0.687
+VBG   ==> precision: 0.698	recall: 0.772	f-score: 0.733
+FW    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VBN   ==> precision: 0.753	recall: 0.638	f-score: 0.69 
+,     ==> precision: 0.958	recall: 0.955	f-score: 0.957
+''    ==> precision: 0.805	recall: 0.669	f-score: 0.73 
+VBP   ==> precision: 0.718	recall: 0.617	f-score: 0.664
+WDT   ==> precision: 0.766	recall: 0.525	f-score: 0.623
+JJ    ==> precision: 0.666	recall: 0.601	f-score: 0.632
+WP    ==> precision: 0.364	recall: 0.35 	f-score: 0.357
+VBZ   ==> precision: 0.7  	recall: 0.743	f-score: 0.721
+DT    ==> precision: 0.755	recall: 0.875	f-score: 0.811
+RP    ==> precision: 0.485	recall: 0.317	f-score: 0.384
+$     ==> precision: 0.594	recall: 0.664	f-score: 0.627
+NN    ==> precision: 0.798	recall: 0.785	f-score: 0.791
+VBD   ==> precision: 0.713	recall: 0.791	f-score: 0.75 
+POS   ==> precision: 0.93 	recall: 0.81 	f-score: 0.866
+.     ==> precision: 0.966	recall: 0.942	f-score: 0.954
+TO    ==> precision: 0.757	recall: 0.846	f-score: 0.799
+HYPH  ==> precision: 0.874	recall: 0.886	f-score: 0.88 
+RB    ==> precision: 0.688	recall: 0.632	f-score: 0.658
+-LRB- ==> precision: 0.313	recall: 0.472	f-score: 0.376
+:     ==> precision: 0.642	recall: 0.52 	f-score: 0.575
+NNS   ==> precision: 0.803	recall: 0.816	f-score: 0.809
+PRP   ==> precision: 0.741	recall: 0.686	f-score: 0.713
+``    ==> precision: 0.617	recall: 0.561	f-score: 0.588
+WRB   ==> precision: 0.286	recall: 0.286	f-score: 0.286
+CC    ==> precision: 0.883	recall: 0.824	f-score: 0.852
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+RBS   ==> precision: 0.333	recall: 0.2  	f-score: 0.25 
+RBR   ==> precision: 0.2  	recall: 0.2  	f-score: 0.2  
+CD    ==> precision: 0.74 	recall: 0.812	f-score: 0.774
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.08 	recall: 0.05 	f-score: 0.062
+IN    ==> precision: 0.87 	recall: 0.843	f-score: 0.856
+WP$   ==> precision: 0.143	recall: 0.154	f-score: 0.148
+MD    ==> precision: 0.758	recall: 0.708	f-score: 0.732
+NNPS  ==> precision: 0.012	recall: 0.023	f-score: 0.015
+-RRB- ==> precision: 0.368	recall: 0.396	f-score: 0.382
+JJS   ==> precision: 0.368	recall: 0.533	f-score: 0.435
+JJR   ==> precision: 0.325	recall: 0.33 	f-score: 0.327
+SYM   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VB    ==> precision: 0.737	recall: 0.79 	f-score: 0.763
+UH    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+NNP   ==> precision: 0.859	recall: 0.88 	f-score: 0.869
+
+Training evaluation for 20 iteration(s):
+accuracy: 0.853
+macroaverage: 0.61
+microaverage: 0.853
+PRP$  ==> precision: 0.778	recall: 0.777	f-score: 0.778
+VBG   ==> precision: 0.814	recall: 0.83 	f-score: 0.822
+FW    ==> precision: 0.014	recall: 0.032	f-score: 0.019
+VBN   ==> precision: 0.821	recall: 0.844	f-score: 0.832
+,     ==> precision: 0.936	recall: 0.95 	f-score: 0.943
+''    ==> precision: 0.698	recall: 0.648	f-score: 0.672
+VBP   ==> precision: 0.775	recall: 0.772	f-score: 0.774
+WDT   ==> precision: 0.776	recall: 0.841	f-score: 0.807
+JJ    ==> precision: 0.845	recall: 0.839	f-score: 0.842
+WP    ==> precision: 0.449	recall: 0.61 	f-score: 0.517
+VBZ   ==> precision: 0.835	recall: 0.807	f-score: 0.821
+DT    ==> precision: 0.891	recall: 0.87 	f-score: 0.88 
+RP    ==> precision: 0.601	recall: 0.53 	f-score: 0.563
+$     ==> precision: 0.644	recall: 0.729	f-score: 0.684
+NN    ==> precision: 0.909	recall: 0.904	f-score: 0.907
+VBD   ==> precision: 0.861	recall: 0.845	f-score: 0.853
+POS   ==> precision: 0.929	recall: 0.881	f-score: 0.904
+.     ==> precision: 0.956	recall: 0.949	f-score: 0.952
+TO    ==> precision: 0.791	recall: 0.855	f-score: 0.822
+HYPH  ==> precision: 0.869	recall: 0.914	f-score: 0.891
+RB    ==> precision: 0.78 	recall: 0.763	f-score: 0.771
+-LRB- ==> precision: 0.329	recall: 0.542	f-score: 0.409
+:     ==> precision: 0.604	recall: 0.705	f-score: 0.65 
+NNS   ==> precision: 0.898	recall: 0.889	f-score: 0.894
+PRP   ==> precision: 0.775	recall: 0.738	f-score: 0.756
+``    ==> precision: 0.556	recall: 0.555	f-score: 0.555
+WRB   ==> precision: 0.337	recall: 0.417	f-score: 0.373
+CC    ==> precision: 0.87 	recall: 0.859	f-score: 0.864
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.02 	recall: 0.053	f-score: 0.029
+RBS   ==> precision: 0.289	recall: 0.524	f-score: 0.373
+RBR   ==> precision: 0.208	recall: 0.353	f-score: 0.262
+CD    ==> precision: 0.841	recall: 0.809	f-score: 0.825
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.181	recall: 0.273	f-score: 0.217
+IN    ==> precision: 0.918	recall: 0.91 	f-score: 0.914
+WP$   ==> precision: 0.147	recall: 0.357	f-score: 0.208
+MD    ==> precision: 0.748	recall: 0.774	f-score: 0.761
+NNPS  ==> precision: 0.472	recall: 0.617	f-score: 0.535
+-RRB- ==> precision: 0.349	recall: 0.496	f-score: 0.41 
+JJS   ==> precision: 0.35 	recall: 0.453	f-score: 0.395
+JJR   ==> precision: 0.464	recall: 0.567	f-score: 0.511
+SYM   ==> precision: 0.25 	recall: 0.389	f-score: 0.304
+VB    ==> precision: 0.726	recall: 0.657	f-score: 0.69 
+UH    ==> precision: 0.143	recall: 0.2  	f-score: 0.167
+NNP   ==> precision: 0.919	recall: 0.9  	f-score: 0.909
+
+Testing evaluation for 20 iteration(s):
+accuracy: 0.783
+macroaverage: 0.502
+microaverage: 0.783
+PRP$  ==> precision: 0.764	recall: 0.678	f-score: 0.719
+VBG   ==> precision: 0.734	recall: 0.712	f-score: 0.723
+FW    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VBN   ==> precision: 0.719	recall: 0.666	f-score: 0.692
+,     ==> precision: 0.949	recall: 0.954	f-score: 0.951
+''    ==> precision: 0.76 	recall: 0.669	f-score: 0.712
+VBP   ==> precision: 0.667	recall: 0.65 	f-score: 0.658
+WDT   ==> precision: 0.607	recall: 0.611	f-score: 0.609
+JJ    ==> precision: 0.696	recall: 0.606	f-score: 0.648
+WP    ==> precision: 0.342	recall: 0.338	f-score: 0.34 
+VBZ   ==> precision: 0.755	recall: 0.711	f-score: 0.732
+DT    ==> precision: 0.854	recall: 0.869	f-score: 0.861
+RP    ==> precision: 0.45 	recall: 0.26 	f-score: 0.329
+$     ==> precision: 0.564	recall: 0.678	f-score: 0.616
+NN    ==> precision: 0.79 	recall: 0.825	f-score: 0.807
+VBD   ==> precision: 0.73 	recall: 0.784	f-score: 0.756
+POS   ==> precision: 0.945	recall: 0.826	f-score: 0.882
+.     ==> precision: 0.959	recall: 0.942	f-score: 0.951
+TO    ==> precision: 0.751	recall: 0.765	f-score: 0.758
+HYPH  ==> precision: 0.856	recall: 0.852	f-score: 0.854
+RB    ==> precision: 0.655	recall: 0.611	f-score: 0.632
+-LRB- ==> precision: 0.193	recall: 0.302	f-score: 0.235
+:     ==> precision: 0.623	recall: 0.52 	f-score: 0.567
+NNS   ==> precision: 0.781	recall: 0.824	f-score: 0.802
+PRP   ==> precision: 0.737	recall: 0.675	f-score: 0.705
+``    ==> precision: 0.628	recall: 0.567	f-score: 0.596
+WRB   ==> precision: 0.244	recall: 0.273	f-score: 0.258
+CC    ==> precision: 0.853	recall: 0.821	f-score: 0.837
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+RBS   ==> precision: 0.045	recall: 0.029	f-score: 0.035
+RBR   ==> precision: 0.071	recall: 0.092	f-score: 0.08 
+CD    ==> precision: 0.748	recall: 0.806	f-score: 0.776
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.069	recall: 0.05 	f-score: 0.058
+IN    ==> precision: 0.839	recall: 0.883	f-score: 0.86 
+WP$   ==> precision: 0.071	recall: 0.154	f-score: 0.098
+MD    ==> precision: 0.757	recall: 0.663	f-score: 0.707
+NNPS  ==> precision: 0.034	recall: 0.068	f-score: 0.046
+-RRB- ==> precision: 0.206	recall: 0.264	f-score: 0.231
+JJS   ==> precision: 0.23 	recall: 0.333	f-score: 0.272
+JJR   ==> precision: 0.247	recall: 0.196	f-score: 0.219
+SYM   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VB    ==> precision: 0.617	recall: 0.563	f-score: 0.588
+UH    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+NNP   ==> precision: 0.879	recall: 0.886	f-score: 0.882
+
+Training evaluation for 30 iteration(s):
+accuracy: 0.861
+macroaverage: 0.611
+microaverage: 0.861
+PRP$  ==> precision: 0.802	recall: 0.791	f-score: 0.796
+VBG   ==> precision: 0.834	recall: 0.838	f-score: 0.836
+FW    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VBN   ==> precision: 0.841	recall: 0.854	f-score: 0.847
+,     ==> precision: 0.945	recall: 0.951	f-score: 0.948
+''    ==> precision: 0.724	recall: 0.63 	f-score: 0.674
+VBP   ==> precision: 0.795	recall: 0.784	f-score: 0.789
+WDT   ==> precision: 0.784	recall: 0.844	f-score: 0.813
+JJ    ==> precision: 0.861	recall: 0.858	f-score: 0.859
+WP    ==> precision: 0.49 	recall: 0.615	f-score: 0.545
+VBZ   ==> precision: 0.833	recall: 0.814	f-score: 0.823
+DT    ==> precision: 0.894	recall: 0.872	f-score: 0.883
+RP    ==> precision: 0.575	recall: 0.55 	f-score: 0.562
+$     ==> precision: 0.635	recall: 0.721	f-score: 0.675
+NN    ==> precision: 0.923	recall: 0.919	f-score: 0.921
+VBD   ==> precision: 0.869	recall: 0.857	f-score: 0.863
+POS   ==> precision: 0.947	recall: 0.886	f-score: 0.915
+.     ==> precision: 0.958	recall: 0.95 	f-score: 0.954
+TO    ==> precision: 0.817	recall: 0.876	f-score: 0.846
+HYPH  ==> precision: 0.856	recall: 0.892	f-score: 0.874
+RB    ==> precision: 0.774	recall: 0.779	f-score: 0.777
+-LRB- ==> precision: 0.344	recall: 0.504	f-score: 0.409
+:     ==> precision: 0.593	recall: 0.714	f-score: 0.648
+NNS   ==> precision: 0.911	recall: 0.9  	f-score: 0.906
+PRP   ==> precision: 0.79 	recall: 0.748	f-score: 0.768
+``    ==> precision: 0.554	recall: 0.547	f-score: 0.551
+WRB   ==> precision: 0.35 	recall: 0.442	f-score: 0.39 
+CC    ==> precision: 0.866	recall: 0.867	f-score: 0.867
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.022	recall: 0.053	f-score: 0.031
+RBS   ==> precision: 0.177	recall: 0.405	f-score: 0.246
+RBR   ==> precision: 0.245	recall: 0.39 	f-score: 0.301
+CD    ==> precision: 0.847	recall: 0.811	f-score: 0.829
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.155	recall: 0.236	f-score: 0.187
+IN    ==> precision: 0.919	recall: 0.912	f-score: 0.916
+WP$   ==> precision: 0.171	recall: 0.429	f-score: 0.245
+MD    ==> precision: 0.788	recall: 0.796	f-score: 0.792
+NNPS  ==> precision: 0.475	recall: 0.617	f-score: 0.537
+-RRB- ==> precision: 0.326	recall: 0.427	f-score: 0.37 
+JJS   ==> precision: 0.314	recall: 0.396	f-score: 0.35 
+JJR   ==> precision: 0.458	recall: 0.567	f-score: 0.507
+SYM   ==> precision: 0.25 	recall: 0.444	f-score: 0.32 
+VB    ==> precision: 0.738	recall: 0.661	f-score: 0.697
+UH    ==> precision: 0.091	recall: 0.2  	f-score: 0.125
+NNP   ==> precision: 0.924	recall: 0.913	f-score: 0.918
+
+Testing evaluation for 30 iteration(s):
+accuracy: 0.788
+macroaverage: 0.499
+microaverage: 0.788
+PRP$  ==> precision: 0.699	recall: 0.675	f-score: 0.686
+VBG   ==> precision: 0.75 	recall: 0.72 	f-score: 0.735
+FW    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VBN   ==> precision: 0.725	recall: 0.689	f-score: 0.707
+,     ==> precision: 0.947	recall: 0.954	f-score: 0.951
+''    ==> precision: 0.755	recall: 0.679	f-score: 0.715
+VBP   ==> precision: 0.716	recall: 0.683	f-score: 0.699
+WDT   ==> precision: 0.671	recall: 0.593	f-score: 0.63 
+JJ    ==> precision: 0.7  	recall: 0.617	f-score: 0.656
+WP    ==> precision: 0.338	recall: 0.338	f-score: 0.338
+VBZ   ==> precision: 0.817	recall: 0.692	f-score: 0.749
+DT    ==> precision: 0.847	recall: 0.86 	f-score: 0.853
+RP    ==> precision: 0.354	recall: 0.221	f-score: 0.272
+$     ==> precision: 0.626	recall: 0.643	f-score: 0.634
+NN    ==> precision: 0.793	recall: 0.839	f-score: 0.815
+VBD   ==> precision: 0.781	recall: 0.762	f-score: 0.771
+POS   ==> precision: 0.941	recall: 0.817	f-score: 0.874
+.     ==> precision: 0.958	recall: 0.941	f-score: 0.949
+TO    ==> precision: 0.745	recall: 0.704	f-score: 0.724
+HYPH  ==> precision: 0.861	recall: 0.859	f-score: 0.86 
+RB    ==> precision: 0.675	recall: 0.592	f-score: 0.63 
+-LRB- ==> precision: 0.052	recall: 0.057	f-score: 0.054
+:     ==> precision: 0.638	recall: 0.485	f-score: 0.551
+NNS   ==> precision: 0.776	recall: 0.863	f-score: 0.817
+NNP   ==> precision: 0.88 	recall: 0.869	f-score: 0.874
+``    ==> precision: 0.588	recall: 0.574	f-score: 0.581
+WRB   ==> precision: 0.379	recall: 0.325	f-score: 0.35 
+CC    ==> precision: 0.849	recall: 0.84 	f-score: 0.845
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+RBS   ==> precision: 0.061	recall: 0.057	f-score: 0.059
+RBR   ==> precision: 0.053	recall: 0.062	f-score: 0.057
+CD    ==> precision: 0.754	recall: 0.814	f-score: 0.783
+PRP   ==> precision: 0.685	recall: 0.657	f-score: 0.671
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.036	recall: 0.025	f-score: 0.029
+IN    ==> precision: 0.833	recall: 0.887	f-score: 0.859
+WP$   ==> precision: 0.111	recall: 0.077	f-score: 0.091
+MD    ==> precision: 0.767	recall: 0.7  	f-score: 0.732
+NNPS  ==> precision: 0.047	recall: 0.091	f-score: 0.062
+-RRB- ==> precision: 0.136	recall: 0.151	f-score: 0.143
+JJS   ==> precision: 0.297	recall: 0.367	f-score: 0.328
+JJR   ==> precision: 0.212	recall: 0.152	f-score: 0.177
+SYM   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VB    ==> precision: 0.642	recall: 0.689	f-score: 0.665
+UH    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+
+Training evaluation for 40 iteration(s):
+accuracy: 0.858
+macroaverage: 0.614
+microaverage: 0.858
+PRP$  ==> precision: 0.792	recall: 0.778	f-score: 0.785
+VBG   ==> precision: 0.826	recall: 0.85 	f-score: 0.838
+FW    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VBN   ==> precision: 0.831	recall: 0.859	f-score: 0.845
+,     ==> precision: 0.948	recall: 0.946	f-score: 0.947
+''    ==> precision: 0.682	recall: 0.634	f-score: 0.657
+VBP   ==> precision: 0.778	recall: 0.782	f-score: 0.78 
+WDT   ==> precision: 0.769	recall: 0.836	f-score: 0.801
+JJ    ==> precision: 0.861	recall: 0.854	f-score: 0.858
+WP    ==> precision: 0.478	recall: 0.621	f-score: 0.54 
+VBZ   ==> precision: 0.834	recall: 0.807	f-score: 0.82 
+DT    ==> precision: 0.893	recall: 0.868	f-score: 0.88 
+RP    ==> precision: 0.525	recall: 0.47 	f-score: 0.496
+$     ==> precision: 0.626	recall: 0.715	f-score: 0.668
+NN    ==> precision: 0.917	recall: 0.915	f-score: 0.916
+VBD   ==> precision: 0.868	recall: 0.865	f-score: 0.866
+POS   ==> precision: 0.925	recall: 0.906	f-score: 0.916
+.     ==> precision: 0.959	recall: 0.945	f-score: 0.952
+TO    ==> precision: 0.81 	recall: 0.867	f-score: 0.837
+HYPH  ==> precision: 0.858	recall: 0.891	f-score: 0.874
+RB    ==> precision: 0.792	recall: 0.786	f-score: 0.789
+-LRB- ==> precision: 0.355	recall: 0.534	f-score: 0.427
+:     ==> precision: 0.541	recall: 0.677	f-score: 0.601
+NNS   ==> precision: 0.914	recall: 0.907	f-score: 0.91 
+PRP   ==> precision: 0.803	recall: 0.746	f-score: 0.773
+``    ==> precision: 0.564	recall: 0.566	f-score: 0.565
+WRB   ==> precision: 0.314	recall: 0.423	f-score: 0.36 
+CC    ==> precision: 0.873	recall: 0.861	f-score: 0.867
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.064	recall: 0.132	f-score: 0.086
+RBS   ==> precision: 0.218	recall: 0.452	f-score: 0.295
+RBR   ==> precision: 0.232	recall: 0.382	f-score: 0.289
+CD    ==> precision: 0.855	recall: 0.825	f-score: 0.84 
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.187	recall: 0.309	f-score: 0.233
+IN    ==> precision: 0.925	recall: 0.917	f-score: 0.921
+WP$   ==> precision: 0.25 	recall: 0.5  	f-score: 0.333
+MD    ==> precision: 0.739	recall: 0.765	f-score: 0.752
+NNPS  ==> precision: 0.457	recall: 0.617	f-score: 0.525
+-RRB- ==> precision: 0.363	recall: 0.527	f-score: 0.43 
+JJS   ==> precision: 0.311	recall: 0.396	f-score: 0.348
+JJR   ==> precision: 0.492	recall: 0.575	f-score: 0.53 
+SYM   ==> precision: 0.267	recall: 0.444	f-score: 0.333
+VB    ==> precision: 0.655	recall: 0.563	f-score: 0.605
+UH    ==> precision: 0.182	recall: 0.4  	f-score: 0.25 
+NNP   ==> precision: 0.926	recall: 0.915	f-score: 0.921
+
+Testing evaluation for 40 iteration(s):
+accuracy: 0.793
+macroaverage: 0.509
+microaverage: 0.793
+PRP$  ==> precision: 0.793	recall: 0.644	f-score: 0.711
+VBG   ==> precision: 0.733	recall: 0.688	f-score: 0.71 
+FW    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VBN   ==> precision: 0.735	recall: 0.683	f-score: 0.708
+,     ==> precision: 0.964	recall: 0.955	f-score: 0.959
+''    ==> precision: 0.81 	recall: 0.692	f-score: 0.746
+VBP   ==> precision: 0.744	recall: 0.681	f-score: 0.711
+WDT   ==> precision: 0.66 	recall: 0.648	f-score: 0.654
+JJ    ==> precision: 0.694	recall: 0.623	f-score: 0.657
+WP    ==> precision: 0.361	recall: 0.325	f-score: 0.342
+VBZ   ==> precision: 0.76 	recall: 0.689	f-score: 0.723
+DT    ==> precision: 0.837	recall: 0.877	f-score: 0.856
+RP    ==> precision: 0.373	recall: 0.24 	f-score: 0.292
+$     ==> precision: 0.592	recall: 0.587	f-score: 0.589
+NN    ==> precision: 0.779	recall: 0.839	f-score: 0.808
+VBD   ==> precision: 0.746	recall: 0.783	f-score: 0.764
+POS   ==> precision: 0.952	recall: 0.762	f-score: 0.846
+.     ==> precision: 0.958	recall: 0.957	f-score: 0.958
+TO    ==> precision: 0.768	recall: 0.763	f-score: 0.765
+HYPH  ==> precision: 0.848	recall: 0.829	f-score: 0.839
+RB    ==> precision: 0.665	recall: 0.635	f-score: 0.65 
+-LRB- ==> precision: 0.187	recall: 0.264	f-score: 0.219
+:     ==> precision: 0.566	recall: 0.43 	f-score: 0.489
+NNS   ==> precision: 0.82 	recall: 0.86 	f-score: 0.839
+NNP   ==> precision: 0.884	recall: 0.874	f-score: 0.879
+``    ==> precision: 0.597	recall: 0.586	f-score: 0.592
+WRB   ==> precision: 0.226	recall: 0.247	f-score: 0.236
+CC    ==> precision: 0.869	recall: 0.825	f-score: 0.847
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+RBS   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+RBR   ==> precision: 0.206	recall: 0.215	f-score: 0.211
+CD    ==> precision: 0.761	recall: 0.823	f-score: 0.791
+PRP   ==> precision: 0.744	recall: 0.695	f-score: 0.719
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.045	recall: 0.025	f-score: 0.032
+IN    ==> precision: 0.85 	recall: 0.873	f-score: 0.861
+WP$   ==> precision: 0.25 	recall: 0.154	f-score: 0.19 
+MD    ==> precision: 0.787	recall: 0.691	f-score: 0.736
+NNPS  ==> precision: 0.069	recall: 0.136	f-score: 0.092
+-RRB- ==> precision: 0.226	recall: 0.226	f-score: 0.226
+JJS   ==> precision: 0.22 	recall: 0.333	f-score: 0.265
+JJR   ==> precision: 0.257	recall: 0.17 	f-score: 0.204
+SYM   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VB    ==> precision: 0.693	recall: 0.733	f-score: 0.712
+UH    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+
+Training evaluation for 50 iteration(s):
+accuracy: 0.873
+macroaverage: 0.633
+microaverage: 0.873
+PRP$  ==> precision: 0.775	recall: 0.806	f-score: 0.79 
+VBG   ==> precision: 0.832	recall: 0.878	f-score: 0.855
+FW    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+VBN   ==> precision: 0.856	recall: 0.881	f-score: 0.868
+,     ==> precision: 0.951	recall: 0.958	f-score: 0.954
+''    ==> precision: 0.736	recall: 0.638	f-score: 0.683
+VBP   ==> precision: 0.797	recall: 0.79 	f-score: 0.794
+WDT   ==> precision: 0.77 	recall: 0.852	f-score: 0.809
+JJ    ==> precision: 0.87 	recall: 0.862	f-score: 0.866
+WP    ==> precision: 0.567	recall: 0.672	f-score: 0.615
+VBZ   ==> precision: 0.863	recall: 0.827	f-score: 0.845
+DT    ==> precision: 0.898	recall: 0.872	f-score: 0.884
+RP    ==> precision: 0.573	recall: 0.564	f-score: 0.569
+$     ==> precision: 0.652	recall: 0.754	f-score: 0.699
+NN    ==> precision: 0.931	recall: 0.929	f-score: 0.93 
+VBD   ==> precision: 0.882	recall: 0.882	f-score: 0.882
+POS   ==> precision: 0.927	recall: 0.889	f-score: 0.907
+.     ==> precision: 0.952	recall: 0.953	f-score: 0.953
+TO    ==> precision: 0.843	recall: 0.884	f-score: 0.863
+HYPH  ==> precision: 0.88 	recall: 0.906	f-score: 0.893
+RB    ==> precision: 0.812	recall: 0.805	f-score: 0.809
+-LRB- ==> precision: 0.347	recall: 0.527	f-score: 0.418
+:     ==> precision: 0.597	recall: 0.708	f-score: 0.648
+NNS   ==> precision: 0.925	recall: 0.914	f-score: 0.92 
+PRP   ==> precision: 0.802	recall: 0.754	f-score: 0.777
+``    ==> precision: 0.565	recall: 0.557	f-score: 0.561
+WRB   ==> precision: 0.36 	recall: 0.442	f-score: 0.397
+CC    ==> precision: 0.876	recall: 0.877	f-score: 0.877
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.06 	recall: 0.105	f-score: 0.076
+RBS   ==> precision: 0.247	recall: 0.5  	f-score: 0.331
+RBR   ==> precision: 0.266	recall: 0.39 	f-score: 0.316
+CD    ==> precision: 0.849	recall: 0.815	f-score: 0.831
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.226	recall: 0.255	f-score: 0.239
+IN    ==> precision: 0.932	recall: 0.919	f-score: 0.926
+WP$   ==> precision: 0.308	recall: 0.571	f-score: 0.4  
+MD    ==> precision: 0.788	recall: 0.774	f-score: 0.781
+NNPS  ==> precision: 0.478	recall: 0.617	f-score: 0.538
+-RRB- ==> precision: 0.42 	recall: 0.519	f-score: 0.464
+JJS   ==> precision: 0.33 	recall: 0.424	f-score: 0.371
+JJR   ==> precision: 0.524	recall: 0.611	f-score: 0.564
+SYM   ==> precision: 0.3  	recall: 0.5  	f-score: 0.375
+VB    ==> precision: 0.809	recall: 0.766	f-score: 0.787
+UH    ==> precision: 0.111	recall: 0.2  	f-score: 0.143
+NNP   ==> precision: 0.92 	recall: 0.911	f-score: 0.915
+
+
+Testing evaluation for 50 iteration(s):
+accuracy: 0.794
+macroaverage: 0.507
+microaverage: 0.794
+PRP$  ==> precision: 0.766	recall: 0.606	f-score: 0.677
+VBG   ==> precision: 0.756	recall: 0.726	f-score: 0.741
+VBD   ==> precision: 0.762	recall: 0.784	f-score: 0.773
+VB    ==> precision: 0.769	recall: 0.777	f-score: 0.773
+,     ==> precision: 0.967	recall: 0.971	f-score: 0.969
+''    ==> precision: 0.764	recall: 0.685	f-score: 0.723
+VBP   ==> precision: 0.72 	recall: 0.681	f-score: 0.7  
+WDT   ==> precision: 0.7  	recall: 0.605	f-score: 0.649
+JJ    ==> precision: 0.653	recall: 0.65 	f-score: 0.651
+WP    ==> precision: 0.357	recall: 0.313	f-score: 0.333
+VBZ   ==> precision: 0.782	recall: 0.722	f-score: 0.751
+DT    ==> precision: 0.84 	recall: 0.872	f-score: 0.856
+RP    ==> precision: 0.421	recall: 0.231	f-score: 0.298
+$     ==> precision: 0.613	recall: 0.608	f-score: 0.611
+NN    ==> precision: 0.805	recall: 0.811	f-score: 0.808
+FW    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+POS   ==> precision: 0.94 	recall: 0.749	f-score: 0.834
+.     ==> precision: 0.968	recall: 0.947	f-score: 0.957
+TO    ==> precision: 0.758	recall: 0.723	f-score: 0.74 
+HYPH  ==> precision: 0.903	recall: 0.827	f-score: 0.863
+RB    ==> precision: 0.662	recall: 0.619	f-score: 0.639
+-LRB- ==> precision: 0.217	recall: 0.283	f-score: 0.246
+:     ==> precision: 0.595	recall: 0.47 	f-score: 0.525
+NNS   ==> precision: 0.798	recall: 0.876	f-score: 0.835
+PRP   ==> precision: 0.722	recall: 0.712	f-score: 0.717
+``    ==> precision: 0.54 	recall: 0.586	f-score: 0.562
+WRB   ==> precision: 0.25 	recall: 0.26 	f-score: 0.255
+CC    ==> precision: 0.862	recall: 0.83 	f-score: 0.846
+LS    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+PDT   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+RBS   ==> precision: 0.067	recall: 0.057	f-score: 0.062
+RBR   ==> precision: 0.119	recall: 0.108	f-score: 0.113
+VBN   ==> precision: 0.765	recall: 0.686	f-score: 0.723
+AFX   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+EX    ==> precision: 0.077	recall: 0.05 	f-score: 0.061
+IN    ==> precision: 0.832	recall: 0.885	f-score: 0.858
+WP$   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+CD    ==> precision: 0.745	recall: 0.825	f-score: 0.783
+MD    ==> precision: 0.74 	recall: 0.646	f-score: 0.69 
+NNPS  ==> precision: 0.055	recall: 0.114	f-score: 0.074
+-RRB- ==> precision: 0.25 	recall: 0.283	f-score: 0.265
+JJS   ==> precision: 0.266	recall: 0.283	f-score: 0.274
+JJR   ==> precision: 0.25 	recall: 0.161	f-score: 0.196
+SYM   ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+UH    ==> precision: 0.0  	recall: 0.0  	f-score: 0.0  
+NNP   ==> precision: 0.889	recall: 0.874	f-score: 0.881
+
